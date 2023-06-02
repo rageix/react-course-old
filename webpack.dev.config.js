@@ -1,5 +1,5 @@
-import htmlWebpackPlugin from 'html-webpack-plugin';
-import webpack from'webpack';
+import webpack from 'webpack';
+import htmlBundlerWebpackPlugin from 'html-bundler-webpack-plugin';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
@@ -12,23 +12,48 @@ export default {
     devtool: 'eval-source-map',
     plugins: [
         new webpack.ids.HashedModuleIdsPlugin(),
-        new htmlWebpackPlugin({
-            inject: "body",
-            template: 'static/index.html',
-            filename: path.join(__dirname, ".tmp/static/index.html"),
-            chunks: ['app'], // respective JS files
-            publicPath: '/scripts/',
+        new htmlBundlerWebpackPlugin({
+            entry: {
+                // define templates here
+                'index': './src/index.html',
+            },
+            js: {
+                // output filename of JS extracted from source script specified in `<script>`
+                filename: "./scripts/[name].[contenthash].js",
+            },
+            css: {
+                // output filename of CSS extracted from source file specified in `<link>`
+                filename: "./styles/[name].[contenthash].css",
+            },
         }),
     ],
-    entry: {
-        app: path.resolve(__dirname, '.tmp/static/scripts/app.js'),
-    },
+    entry: {},
     output: {
-        path: path.resolve(__dirname, '.tmp/static/scripts'),
+        path: path.resolve(__dirname, '.tmp/src/'),
         filename: '[name].[contenthash].js',
     },
     module: {
-
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: ['ts-loader'],
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.(css|sass|scss)$/,
+                use: ['css-loader', 'sass-loader'],
+            },
+            // {
+            //     test: /\.(svg|eot|woff|woff2|ttf)$/,
+            //     type: 'asset/resource',
+            //     generator: {
+            //         filename: './fonts/[name][ext]'
+            //     }
+            // },
+        ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
     },
     optimization: {
         runtimeChunk: 'single',
@@ -50,5 +75,26 @@ export default {
                 },
             },
         },
-    }
+    },
+    devServer: {
+        port: 8080,
+        host: 'localhost',
+        hot: true,
+        static: [
+            {
+                directory: path.join(__dirname, "./.tmp/src"),
+                publicPath: '/',
+            },
+            {
+                directory: path.join(__dirname, 'src/images/'),
+                publicPath: '/images',
+            },
+            {
+                directory: path.join(__dirname, 'src/fonts/'),
+                publicPath: '/fonts',
+            },
+        ],
+        liveReload: true,
+        watchFiles: [path.join(__dirname, './src/**/*')]
+    },
 };
