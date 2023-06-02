@@ -9,11 +9,15 @@
         "allowSyntheticDefaultImports": true,
         "skipLibCheck": true,
         "moduleResolution": "node",
-        "outDir": "./.tmp/static/scripts",
         "typeRoots": [
             "./node_modules/@types"
         ],
         "incremental": true
     },
-    "exclude": ["node_modules", "build", ".tmp", "**/*.spec.ts"]
+    "exclude": [
+        "node_modules",
+        "build",
+        "dist",
+        "**/*.spec.ts"
+    ]
 }

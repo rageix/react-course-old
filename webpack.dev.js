@@ -29,8 +29,9 @@ export default {
     ],
     entry: {},
     output: {
-        path: path.resolve(__dirname, '.tmp/src/'),
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
+        clean: true
     },
     module: {
         rules: [
@@ -41,15 +42,20 @@ export default {
             },
             {
                 test: /\.(css|sass|scss)$/,
-                use: ['css-loader', 'sass-loader'],
+                use: [{
+                    loader: 'css-loader',
+                    options: {url: false}
+                }, {
+                    loader: 'postcss-loader',
+                    options: {
+                        postcssOptions: {
+                            "parser": false,
+                            "map": false,
+                            "plugins": {}
+                        }
+                    }
+                }, 'sass-loader'],
             },
-            // {
-            //     test: /\.(svg|eot|woff|woff2|ttf)$/,
-            //     type: 'asset/resource',
-            //     generator: {
-            //         filename: './fonts/[name][ext]'
-            //     }
-            // },
         ]
     },
     resolve: {
@@ -82,12 +88,16 @@ export default {
         hot: true,
         static: [
             {
-                directory: path.join(__dirname, "./.tmp/src"),
+                directory: path.join(__dirname, "dist"),
                 publicPath: '/',
             },
             {
                 directory: path.join(__dirname, 'src/images/'),
                 publicPath: '/images',
+            },
+            {
+                directory: path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts'),
+                publicPath: '/fonts/fontawesome6',
             },
             {
                 directory: path.join(__dirname, 'src/fonts/'),
