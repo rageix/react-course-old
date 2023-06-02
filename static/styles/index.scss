@@ -1,3 +1,4 @@
+$fa-font-path: "/fonts/fontawesome6";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
@@ -8,4 +9,9 @@
   font-weight: bold;
   font-size: 50px;
   color: red;
+}
+
+.test-image {
+  width: 100px;
+  height: auto;
 }
