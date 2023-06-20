@@ -1,14 +1,5 @@
-@use "bootstrap/scss/bootstrap";
-$fa-font-path: "/fonts/fontawesome6";
-@use "@fortawesome/fontawesome-free/scss/fontawesome" with (
-    $fa-font-path: $fa-font-path,
-);
-@use "@fortawesome/fontawesome-free/scss/regular" with (
-    $fa-font-path: $fa-font-path,
-);
-@use "@fortawesome/fontawesome-free/scss/solid" with (
-    $fa-font-path: $fa-font-path,
-);
+@use "bootstrap";
+@use "fonts";
 
 .hello {
   font-weight: bold;
