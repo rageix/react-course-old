@@ -5,6 +5,7 @@ import Card from "../Basic/Card";
 import Heading from "../Basic/Heading";
 import LoginFormWithReducer from "../Basic/LoginFormWithReducer";
 import LoginFormWithController from "../Basic/LoginFormWithController";
+import Todo from "../Todo/Todo";
 
 interface IAlertItem {
     id: number,
@@ -70,8 +71,11 @@ export default function MainView() {
             {/*<div className="mt-5">*/}
             {/*    <LoginFormWithReducer/>*/}
             {/*</div>*/}
+            {/*<div className="mt-5">*/}
+            {/*    <LoginFormWithController/>*/}
+            {/*</div>*/}
             <div className="mt-5">
-                <LoginFormWithController/>
+                <Todo/>
             </div>
 
         </div>
