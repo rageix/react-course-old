@@ -2,7 +2,7 @@
     "name": "frontend-template",
     "type": "module",
     "scripts": {
-        "serve-dev": "webpack serve --open --config webpack.dev.js",
+        "serve-dev": "webpack serve --config webpack.dev.js",
         "serve-prod": "webpack serve --open --config webpack.prod.js",
         "build-dev": "webpack --config webpack.dev.js",
         "build-prod": "webpack --config webpack.prod.js",
