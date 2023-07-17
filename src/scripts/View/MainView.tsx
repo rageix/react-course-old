@@ -6,6 +6,8 @@ import Heading from "../Basic/Heading";
 import LoginFormWithReducer from "../Basic/LoginFormWithReducer";
 import LoginFormWithController from "../Basic/LoginFormWithController";
 import Todo from "../Todo/Todo";
+import Tooltip from "../Tooltip/Tooltip";
+import ModalView from "../Modal/ModalView";
 
 interface IAlertItem {
     id: number,
@@ -74,8 +76,17 @@ export default function MainView() {
             {/*<div className="mt-5">*/}
             {/*    <LoginFormWithController/>*/}
             {/*</div>*/}
+            {/*<div className="mt-5">*/}
+            {/*    <Todo/>*/}
+            {/*</div>*/}
+            {/*<div className="mt-5">*/}
+            {/*    <Tooltip title="Our cool tooltip" options={{placement: "right"}}>*/}
+            {/*        <button type="button" className="btn btn-primary">Test button</button>*/}
+            {/*    </Tooltip>*/}
+            {/*</div>*/}
+
             <div className="mt-5">
-                <Todo/>
+               <ModalView/>
             </div>
 
         </div>
