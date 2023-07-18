@@ -12,7 +12,7 @@ interface IProps<T> {
 
 export default function RowItem<T>(props: IProps<T>) {
 
-    const columns: React.ReactElement[] = props.columns.map((v) => v.format(props.item));
+    const columns: React.ReactElement[] = props.columns.map((v, i) => <td key={i}>{v.format(props.item)}</td>);
 
     return (
         <tr>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {IPagination} from "../Pagination/Types";
 export interface IDataTableState<T> {
     items: T[],
     selected: string[],
@@ -7,14 +8,8 @@ export interface IDataTableState<T> {
     pagination: IPagination
 }
 
-export interface IPagination {
-    page: number,
-    perPage: number,
-}
-
 export interface IDataTableColumn<T> {
     column: keyof T,
     label: string,
     format: (arg: T) => React.ReactElement,
-    id?: (arg: T) => string
 }

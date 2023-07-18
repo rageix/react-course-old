@@ -8,6 +8,9 @@ import LoginFormWithController from "../Basic/LoginFormWithController";
 import Todo from "../Todo/Todo";
 import Tooltip from "../Tooltip/Tooltip";
 import ModalView from "../Modal/ModalView";
+import DataTableController from "../DataTable/DataTableController";
+import DataTable from "../DataTable/DataTable";
+import CommentsTableController from "../CommentsTable/CommentsTableController";
 
 interface IAlertItem {
     id: number,
@@ -84,9 +87,11 @@ export default function MainView() {
             {/*        <button type="button" className="btn btn-primary">Test button</button>*/}
             {/*    </Tooltip>*/}
             {/*</div>*/}
-
+            {/*<div className="mt-5">*/}
+            {/*   <ModalView/>*/}
+            {/*</div>*/}
             <div className="mt-5">
-               <ModalView/>
+               <DataTable controller={new CommentsTableController()}/>
             </div>
 
         </div>

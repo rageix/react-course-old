@@ -4,41 +4,51 @@ import DataTableController from "../DataTable/DataTableController";
 import {comments, IComments} from "./Data";
 
 export interface IState extends IDataTableState<IComments> {
-
 }
 
 export const defaultState: IState = {
     items: comments,
+    // items: [],
     selected: [],
     displayItems: [],
     columns: [{
         column: "id",
         label: "Id",
-        format: v => <td>{v.id}</td>,
+        format: v => <>{v.id}</>,
     }, {
         column: "postId",
         label: "Post Id",
-        format: v => <td>{v.postId}</td>,
+        format: v => <>{v.postId}</>,
     }, {
         column: "name",
         label: "Name",
-        format: v => <td>{v.name}</td>,
+        format: v => <>{v.name}</>,
     }, {
         column: "body",
         label: "Body",
-        format: v => <td>{v.body}</td>,
+        format: v => <>{v.body}</>,
     }, {
         column: "email",
         label: "Email",
-        format: v => <td>{v.body}</td>,
+        format: v => <>{v.body}</>,
     }],
-    pagination: {
-        page: 0,
-        perPage: 10,
-    }
+    pagination: null
 }
 
-export default class Controller extends DataTableController<IState> {
+export default class CommentsTableController extends DataTableController<IComments> {
 
+    constructor() {
+        super();
+
+        let state = this.updatePagination(defaultState, {
+            page: 0,
+            perPage: 10,
+            totalPages: null,
+            totalItems: defaultState.items.length
+        });
+
+        this.defaultState = this.updateDisplayItems(state);
+
+    }
 
 }
