@@ -28,6 +28,6 @@ This template includes:
 
 * `npm start` serves a non-optimized dev version using webpack dev server
 * `npm run start:prod` serves an optimized production version using webpack dev server
-* `npm run build` just builds an optimized production version
-* `npm run build:dev` just builds the non-optimized version
+* `npm run build` builds an optimized production version
+* `npm run build:dev` builds the non-optimized version
 * `npm run deploy` runs a gulp script that builds an optimized production version and gzips .js and .css assets. You are meant to extend the gulp script to do other deploy things like upload to AWS or the like.
