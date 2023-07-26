@@ -1,8 +1,9 @@
-# Frontend Template
+# React Course
 
 ## Introduction
 
-This repo is meant to be my ideal starter template when creating a new web application.
+This repo is meant as a good starting point template for a TypeScript and React Project. 
+This contains examples from a React course (hense the name) I am working on.
 
 This template includes:
 
@@ -14,6 +15,8 @@ This template includes:
 * [Lazysizes](https://www.npmjs.com/package/lazysizes)
 * [Gulp](https://gulpjs.com/)
 * [PostCSS](https://postcss.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [React](https://react.dev/)
 
 ## How to get started
 
