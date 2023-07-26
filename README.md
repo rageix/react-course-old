@@ -3,7 +3,7 @@
 ## Introduction
 
 This repo is meant as a good starting point template for a TypeScript and React Project. 
-This contains examples from a React course (hense the name) I am working on.
+This contains examples from a React course (hence the name) I am working on.
 
 This template includes:
 
