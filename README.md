@@ -9,14 +9,13 @@ This template includes:
 
 * [Webpack](https://webpack.js.org/)
 * [TypeScript](https://www.typescriptlang.org/)
+* [React](https://react.dev/)
 * [Sass](https://sass-lang.com/)
 * [Bootstrap](https://getbootstrap.com/)
 * [FontAwesome](https://fontawesome.com/)
 * [Lazysizes](https://www.npmjs.com/package/lazysizes)
 * [Gulp](https://gulpjs.com/)
 * [PostCSS](https://postcss.org/)
-* [TypeScript](https://www.typescriptlang.org/)
-* [React](https://react.dev/)
 
 ## How to get started
 
